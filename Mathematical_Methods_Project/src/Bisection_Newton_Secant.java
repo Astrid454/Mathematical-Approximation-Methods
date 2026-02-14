@@ -13,7 +13,7 @@ public class Bisection_Newton_Secant {
         this.type = type;
     }
 
-    // Function f(x)
+    // f(x)
     public double f(double x) {
         switch (type) {
             case "ex1": return Math.pow(x, 3) + 4 * Math.pow(x, 2) - 10;
@@ -26,7 +26,7 @@ public class Bisection_Newton_Secant {
         }
     }
 
-    // Derivative f'(x)
+    // f'(x) derivative
     public double fd(double x) {
         switch (type) {
             case "ex1": return 3 * Math.pow(x, 2) + 8 * x;
@@ -39,7 +39,7 @@ public class Bisection_Newton_Secant {
         }
     }
 
-    // Interval limits and initial values
+    // interval limits and initial values
     public double[] limitsInt() {
         switch (type) {
             case "ex1": return new double[]{1, 2, 2, 1, 2};
@@ -97,7 +97,7 @@ public class Bisection_Newton_Secant {
         return new double[]{x2, k};
     }
 
-    // Plot Function
+    // plot function
     /*public static XYSeries createSeries(String title, Bisection_Newton_Secant nm, double a, double b, double step) {
         XYSeries series = new XYSeries(title);
         for (double x = a; x <= b; x += step) {
@@ -127,3 +127,4 @@ public class Bisection_Newton_Secant {
 */
    
 }
+
