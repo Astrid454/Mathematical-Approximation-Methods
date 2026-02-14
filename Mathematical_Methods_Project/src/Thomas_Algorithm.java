@@ -24,18 +24,16 @@ public class Thomas_Algorithm {
         return x;
     }
 
-    // Eliminarea Gauss cu pivotare parțială
     public double[] solveGauss(double[][] A, double[] b) {
         int n = b.length;
         double[][] augmentedMatrix = new double[n][n + 1];
 
-        // Construirea matricei extinse
         for (int i = 0; i < n; i++) {
             System.arraycopy(A[i], 0, augmentedMatrix[i], 0, n);
             augmentedMatrix[i][n] = b[i];
         }
 
-        // Metoda eliminării Gauss cu pivotare parțială
+        // Gaussian Elimination with partial pivoting
         for (int i = 0; i < n - 1; i++) {
             int maxRow = i;
             for (int j = i + 1; j < n; j++) {
@@ -44,7 +42,6 @@ public class Thomas_Algorithm {
                 }
             }
 
-            // Schimbarea liniilor
             double[] temp = augmentedMatrix[maxRow];
             augmentedMatrix[maxRow] = augmentedMatrix[i];
             augmentedMatrix[i] = temp;
@@ -57,7 +54,7 @@ public class Thomas_Algorithm {
             }
         }
 
-        // Substituția inversă
+        // Back Substitution
         double[] x = new double[n];
         for (int i = n - 1; i >= 0; i--) {
             x[i] = augmentedMatrix[i][n];
@@ -70,4 +67,5 @@ public class Thomas_Algorithm {
         return x;
     }
   
+
 }
