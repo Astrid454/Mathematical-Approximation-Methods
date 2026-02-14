@@ -30,7 +30,7 @@ public class App {
                     double a = limits[0], b = limits[1], x0n = limits[2], x0s = limits[3], x1s = limits[4];
                     double e = 1e-10;
             
-                    // Plot function
+                    // flot function
                     //plotFunction(nm, a, b);
             
                     // Bisection Method
@@ -57,7 +57,6 @@ public class App {
                     System.out.println("NUMERICAL METHODS FOR NUMERICAL INTEGRATION\n");
                     System.out.println("To introduce a new example modify: LimitsInt, ftitle, and f\n");
             
-                    // Obține limitele integralei și valoarea exactă
                     double[] limits = solver.LimitsInt();
                     double a = limits[0];
                     double b = limits[1];
@@ -132,7 +131,7 @@ public class App {
                     System.out.println("The exact solution:");
                     System.out.println(Arrays.toString(exact));
 
-                    // Example of solving the system using Gaussian Elimination with Pivoting
+                    // example of solving the system using Gaussian Elimination with pivoting
                     double[] solutionWithoutPivoting = dls.gaussianEliminationWithPivoting(A, b);
                     System.out.println("Approximate solution using Gaussian Elimination without Pivoting:");
                     System.out.println(Arrays.toString(solutionWithoutPivoting));
@@ -200,5 +199,6 @@ public class App {
         scanner.close();
     }
 }
+
 
 
