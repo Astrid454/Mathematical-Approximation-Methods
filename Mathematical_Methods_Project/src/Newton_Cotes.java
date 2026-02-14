@@ -10,7 +10,7 @@ public class Newton_Cotes {
         this.typex = typex;
         this.n = n;
     }
-    //Function f(x)
+    // function f(x)
     public double f(double x) {
         switch (typex) {
             case "ex1": return Math.cos(x);
@@ -20,7 +20,7 @@ public class Newton_Cotes {
         }
     }
 
-    //Descrierea functiei 
+    // function description
     public String ftitle() {
         switch (typex) {
             case "ex1":
@@ -33,7 +33,7 @@ public class Newton_Cotes {
                 throw new IllegalArgumentException("Unknown typex: " + typex);
         }
     }
-     // Limitele integralei
+     // integral limits
      public double[] LimitsInt() {
         switch (typex) {
             case "ex1":
@@ -47,7 +47,7 @@ public class Newton_Cotes {
         }
     }
 
-    // Regula Trapezului
+    // Trapezoidal Rule
     public double TrapRule(double a, double b) {
         double h = (b - a) / n;
         double T = 0.5 * (f(a) + f(b));
@@ -57,7 +57,7 @@ public class Newton_Cotes {
         return T * h;
     }
 
-    //Regula punctului de mijloc
+    // Midpoint Rule
     public double MidpointRule(double a, double b){
         double h = (b - a) / n;
         double M = 0;
@@ -67,7 +67,7 @@ public class Newton_Cotes {
         return M * h;
     }
 
-    //Regula Simpson
+    // Simpson Rule
     public double SimpsonRule(double a, double b){
         if(n % 2 != 0)throw new IllegalArgumentException("!!! Give an even value for the number n !!");
         double h = (b - a) / n;
@@ -80,7 +80,7 @@ public class Newton_Cotes {
         return (f(a) + 2 * S1 + 4 * S2 + f(b)) * h / 3;
     }
 
-    //Regula Simpson 3/8
+    // Simpson 3/8 Rule
     public double Simpson3_8Rule(double a, double b){
         if(n % 3 != 0)throw new IllegalArgumentException("!!! Give n as a multiple of 3 !!!");
         double h = (b - a) / n;
@@ -94,3 +94,4 @@ public class Newton_Cotes {
         return (f(a) + 2 * S1 + 3 * S2 + f(b)) * 3 * h / 8;
     }
 }
+
