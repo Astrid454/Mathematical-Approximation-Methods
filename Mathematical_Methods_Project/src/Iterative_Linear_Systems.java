@@ -22,12 +22,11 @@ public class Iterative_Linear_Systems {
         return xo;
     }
 
-    // Constructor for initializing the system
     public Iterative_Linear_Systems(String typex) {
         initializeDataSystem(typex);
     }
 
-    // Method to initialize the data system
+    // initialize the data system
     private void initializeDataSystem(String typex) {
         switch (typex) {
             case "ex1":
@@ -111,7 +110,7 @@ public class Iterative_Linear_Systems {
         return new Result(xn, steps);
     }
 
-    // Utility to compute norm
+    // compute norm
     private double computeNorm(double[] xn, double[] xo) {
         double max = 0;
         for (int i = 0; i < xn.length; i++) {
@@ -120,7 +119,7 @@ public class Iterative_Linear_Systems {
         return max;
     }
 
-    // Inner class for results
+    // class for results
     public static class Result {
         double[] solution;
         int steps;
@@ -139,3 +138,4 @@ public class Iterative_Linear_Systems {
         }
     }
 }
+
