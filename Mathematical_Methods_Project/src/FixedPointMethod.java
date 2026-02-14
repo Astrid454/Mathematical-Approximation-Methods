@@ -6,11 +6,11 @@ public class FixedPointMethod {
     public FixedPointMethod(String typex, String typeg) {
         this.typex = typex;
         this.typeg = typeg;
-        this.e = Math.pow(10, -10); // Precision for stopping criteria
+        this.e = Math.pow(10, -10); 
         setLimitsAndInitialValues();
     }
     
-    // Sets limits and initial values for the interval and x0 based on typex
+    // sets limits and initial values for the interval and x0 based on typex
     private void setLimitsAndInitialValues() {
         switch (typex) {
             case "ex1":
@@ -31,7 +31,7 @@ public class FixedPointMethod {
         }
     }
     
-    // Method to solve the fixed point iteration
+    // method to solve the fixed point iteration
     public void solveFixedPointMethod() {
         System.out.println("FIXED POINT METHOD FOR NONLINEAR EQUATIONS");
         System.out.println("\nTo introduce a new example modify: LimitsInt, ftitle, f\n");
@@ -39,14 +39,14 @@ public class FixedPointMethod {
         long startTime = System.nanoTime();
         double mfp = fixedPointMethod(x0, e);
         long endTime = System.nanoTime();
-        double timefp = (endTime - startTime) / 1e6; // Convert to milliseconds
+        double timefp = (endTime - startTime) / 1e6; // convert to milliseconds
 
         System.out.printf("The approx. sol. is %.5f\n", mfp);
         System.out.printf("The execution time for Fixed Point Method is %.7f ms\n", timefp);
         System.out.println("-------------------------------------------\n");
     }
 
-    // Implements the Fixed Point Method
+    // Fixed Point Method
     private double fixedPointMethod(double x0, double e) {
         double x1 = g(x0);
         int k = 1;
@@ -70,7 +70,7 @@ public class FixedPointMethod {
         }
     }
 
-    // Function g(x) based on typex and typeg
+    // function g(x) based on typex and typeg
     private double g(double x) {
         switch (typex) {
             case "ex1":
@@ -112,10 +112,10 @@ public class FixedPointMethod {
                 }
                 break;
         }
-        return 0; // Default case
+        return 0; 
     }
 
-    // Function f(x) based on typex
+    // function f(x) based on typex
     private double f(double x) {
         switch (typex) {
             case "ex1":
@@ -125,10 +125,10 @@ public class FixedPointMethod {
             case "ex3":
                 return Math.pow(x, 4) + 2 * Math.pow(x, 2) - x - 3;
         }
-        return 0; // Default case
+        return 0; 
     }
 
-    // Function to return a string that describes the function f(x)
+    // function to return a string that describes the function f(x)
     public String ftitle() {
         switch (typex) {
             case "ex1":
@@ -142,4 +142,5 @@ public class FixedPointMethod {
     }
 
 }
+
 
